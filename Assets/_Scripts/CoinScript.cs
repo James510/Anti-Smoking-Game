@@ -4,7 +4,7 @@ using System.Collections;
 public class CoinScript : MonoBehaviour
 {
     //public float timer=0.1f;
-    
+
 	void Update ()
     {
         //Debug.Log(Time.time);
