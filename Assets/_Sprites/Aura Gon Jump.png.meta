@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-guid: 39f4b4ae403e955459783c540f4c98a1
-timeCreated: 1454122854
+guid: aece18229d45e0e4dbfc775175fb4266
+timeCreated: 1454376446
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Doctor clone_0
-    21300002: Doctor clone_1
-    21300004: Doctor clone_2
-    21300006: Doctor clone_3
+    21300000: Aura Gon Jump_0
+    21300002: Aura Gon Jump_1
+    21300004: Aura Gon Jump_2
+    21300006: Aura Gon Jump_3
+    21300008: Aura Gon Jump_4
+    21300010: Aura Gon Jump_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,48 +56,70 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Doctor clone_0
+    - name: Aura Gon Jump_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 6
         y: 0
-        width: 22
-        height: 34
-      alignment: 9
-      pivot: {x: 0.4559229, y: 0.51222306}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: Doctor clone_1
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 0
-        width: 24
-        height: 34
-      alignment: 9
-      pivot: {x: 0.5057721, y: 0.51222306}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: Doctor clone_2
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 0
-        width: 24
-        height: 33
+        width: 19
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Doctor clone_3
+    - name: Aura Gon Jump_1
       rect:
         serializedVersion: 2
-        x: 115
+        x: 42
+        y: 3
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Aura Gon Jump_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 3
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Aura Gon Jump_3
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 4
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Aura Gon Jump_4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Aura Gon Jump_5
+      rect:
+        serializedVersion: 2
+        x: 186
         y: 0
-        width: 22
-        height: 33
-      alignment: 9
-      pivot: {x: 0.45592326, y: 0.50419784}
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     outline: []
