@@ -10,19 +10,22 @@ public class FadeInOut : MonoBehaviour
     public GameObject canvas;
     private bool fadeIn;
     private bool start;
+    private bool trigger;
+    private bool fadedIn;
 
 	void Start ()
     {
+        trigger = true;
         fadeIn = true;
         start = false;
+        outDelay = 0;
+        loadNext = 1;   
         //Debug.Log("Start Wait");
         StartCoroutine(WaitFadeIn(inDelay));
         if (splashScreens)
         {
             outDelay += inDelay+2;
             loadNext += outDelay+1;
-            StartCoroutine(WaitFadeOut(outDelay));
-            StartCoroutine(WaitLoadNext(loadNext, levelLoad));
         }
         else
         {
@@ -55,7 +58,16 @@ public class FadeInOut : MonoBehaviour
             GetComponent<Renderer>().material.color += new Color(0, 0, 0, .05f);
             //Debug.Log("Fading Out");
         }
-            
+        if(splashScreens && fadedIn && trigger)
+        {
+            trigger = false;
+            StartCoroutine(WaitFadeOut(outDelay));
+            StartCoroutine(WaitLoadNext(loadNext, levelLoad));
+        }
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            Application.LoadLevel(levelLoad);
+        }
     }
 
     IEnumerator WaitFadeIn(float f)
@@ -63,6 +75,7 @@ public class FadeInOut : MonoBehaviour
         yield return new WaitForSeconds(f);
         //Debug.Log("End Wait");
         start = true;
+        fadedIn = true;
     }
     IEnumerator WaitFadeInCanvas(float f)
     {

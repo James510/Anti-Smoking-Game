@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A3A7E449-AF1B-4042-B64E-0A4564173364}</ProjectGuid>
+    <ProjectGuid>{051218F0-9622-7ECF-3774-A58D13E70C55}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -73,8 +73,10 @@
     <Compile Include="Assets\_Scripts\LookAtChar.cs" />
     <Compile Include="Assets\_Scripts\PlatformScript.cs" />
     <Compile Include="Assets\_Scripts\PlayerController.cs" />
+    <Compile Include="Assets\_Scripts\SceneCounter.cs" />
     <Compile Include="Assets\_Scripts\SceneDialogue02.cs" />
     <Compile Include="Assets\_Scripts\SmokerScript.cs" />
+    <Compile Include="Assets\_Scripts\Timed_Lever.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
