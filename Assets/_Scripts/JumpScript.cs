@@ -6,7 +6,7 @@ public class JumpScript : MonoBehaviour
     public GameObject player;
     // Use this for initialization
 
-    void OnTriggerStay(Collider collider)
+    void OnTriggerEnter(Collider collider)
     {
 
         if (collider.gameObject.CompareTag("Platform"))
