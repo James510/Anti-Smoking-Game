@@ -16,7 +16,7 @@ public class BreakableBoxScript : MonoBehaviour
         if (collider.gameObject.CompareTag("Player")&&collider.gameObject.transform.position.y>transform.position.y+0.3f)
         {
             //Debug.Log("Hit");
-            collider.gameObject.GetComponent<Rigidbody>().AddForce(0, 400, 0);
+            collider.gameObject.GetComponent<Rigidbody>().AddForce(0, 600, 0);
             for(int i = 0;i<5;i++)
             {
                 GameObject clone = Instantiate(coin,new Vector3(transform.position.x,transform.position.y,transform.position.z),Quaternion.identity) as GameObject;

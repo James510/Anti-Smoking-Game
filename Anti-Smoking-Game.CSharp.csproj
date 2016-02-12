@@ -62,10 +62,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SceneTransitionScript.cs" />
+    <Compile Include="Assets\_Scripts\BGSwitcher.cs" />
     <Compile Include="Assets\_Scripts\Box.cs" />
     <Compile Include="Assets\_Scripts\BreakableBoxScript.cs" />
     <Compile Include="Assets\_Scripts\CameraFollow.cs" />
     <Compile Include="Assets\_Scripts\CoinScript.cs" />
+    <Compile Include="Assets\_Scripts\DialogueCall.cs" />
+    <Compile Include="Assets\_Scripts\DialogueScripts\d1s1.cs" />
+    <Compile Include="Assets\_Scripts\DialogueScripts\d1s3.cs" />
+    <Compile Include="Assets\_Scripts\DialogueScripts\d1s4a.cs" />
+    <Compile Include="Assets\_Scripts\DialogueScripts\d1s4b.cs" />
     <Compile Include="Assets\_Scripts\DoorScript.cs" />
     <Compile Include="Assets\_Scripts\FadeInOut.cs" />
     <Compile Include="Assets\_Scripts\JumpScript.cs" />
@@ -76,7 +83,9 @@
     <Compile Include="Assets\_Scripts\SceneCounter.cs" />
     <Compile Include="Assets\_Scripts\SceneDialogue02.cs" />
     <Compile Include="Assets\_Scripts\SmokerScript.cs" />
+    <Compile Include="Assets\_Scripts\TextPanelController.cs" />
     <Compile Include="Assets\_Scripts\Timed_Lever.cs" />
+    <Compile Include="Assets\_Scripts\UIController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

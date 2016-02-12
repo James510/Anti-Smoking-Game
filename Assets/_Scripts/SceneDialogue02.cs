@@ -4,6 +4,7 @@ using System.Collections;
 
 public class SceneDialogue02 : MonoBehaviour {
     public Text textfield;
+    public GameObject backGround;
     string currenttext = "";
     bool isrunning = false;
     bool isforcedcomplete = false;

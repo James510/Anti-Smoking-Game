@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CoinScript : MonoBehaviour
 {
     //public float timer=0.1f;
-    
+    public Text money;
+    private int cash=0;
+    void Start()
+    {
+        cash = PlayerPrefs.GetInt("Money");
+        money.text = "Money: " + cash;
+    }
 	void Update ()
     {
         //Debug.Log(Time.time);
@@ -19,6 +26,9 @@ public class CoinScript : MonoBehaviour
         if(collider.gameObject.CompareTag("Player"))
         {
             collider.gameObject.SendMessage("ScoreIncrease", 100);
+            cash++;
+            PlayerPrefs.SetInt("Money", cash);
+            money.text = "Money: " + cash;
             Destroy(gameObject);
         }
     }
