@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public int hp, score;
     public float speed, jumpForce;
-    public GameObject spriteController;
     private Rigidbody rb;
     private bool canJump, mud,jumpAnim = false;
     public int playerControllerActive=1;
@@ -16,7 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anim = spriteController.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         canJump = true;
         //saveVelocity = rb.velocity;
     }
@@ -29,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(playerControllerActive);
+        Debug.Log(playerControllerActive);
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             playerControllerActive *= -1;
@@ -62,12 +61,10 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 rb.AddForce(-speed, 0.0f, 0.0f);
-                spriteController.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
             }
             if (Input.GetKey(KeyCode.D))
             {
                 rb.AddForce(speed, 0.0f, 0.0f);
-                spriteController.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
 
             }
             //Debug.Log(rb.velocity.y);
@@ -80,9 +77,8 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(0, jumpForce, 0);
                 canJump = false;
             }
-            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -1.5f, 1.5f), Mathf.Clamp(rb.velocity.y, -6.0f, 6.0f), 0.0f);
+            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -1.0f, 1.0f), Mathf.Clamp(rb.velocity.y, -5.0f, 5.0f), 0.0f);
             rb.position = new Vector3(transform.position.x, transform.position.y, -0.2f);
-            //spriteController.transform.rotation = Quaternion.Euler(0.0f, transform.rotation.y, 0.0f);
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             //Debug.Log(canJump);
             //Animation
