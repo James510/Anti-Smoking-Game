@@ -5,7 +5,7 @@ public class DoorScript : MonoBehaviour
 {
     public Sprite door, doorOpen;
     public bool enter = false;
-    public string sceneCounter;
+    public int sceneCounter;
     void Activate()
     {
         GetComponent<SpriteRenderer>().sprite = doorOpen;
