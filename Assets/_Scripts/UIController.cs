@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour
         option2.gameObject.SetActive(false);
         stressCount = 75;
         healthCount = 100;
-        moneyCount = 100;
+        //moneyCount = 100;
 	}
 	
 	// Update is called once per frame

@@ -9,8 +9,7 @@ public class CoinScript : MonoBehaviour
     private int cash=0;
     void Start()
     {
-        cash = PlayerPrefs.GetInt("Money");
-        money.text = "Money: " + cash;
+
     }
 	void Update ()
     {
@@ -25,7 +24,8 @@ public class CoinScript : MonoBehaviour
     {
         if(collider.gameObject.CompareTag("Player"))
         {
-            collider.gameObject.SendMessage("ScoreIncrease", 100);
+            //collider.gameObject.SendMessage("ScoreIncrease", 100);
+            cash = PlayerPrefs.GetInt("Money");
             cash++;
             PlayerPrefs.SetInt("Money", cash);
             money.text = "Money: " + cash;
