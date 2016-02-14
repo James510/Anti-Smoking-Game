@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                jumpForce = 600;
+                jumpForce = 1500;
                 speed = 50;
             }
             if (Input.GetKey(KeyCode.A))

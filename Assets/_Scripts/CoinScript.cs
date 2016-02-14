@@ -7,6 +7,13 @@ public class CoinScript : MonoBehaviour
     //public float timer=0.1f;
     public Text money;
     private int cash=0;
+    void Start()
+    {
+
+       /* stress.text = "Stress: " + PlayerPrefs.GetInt("Stress");
+        health.text = ": " + PlayerPrefs.GetInt("Health");
+        money.text = ": " + PlayerPrefs.GetInt("Money");*/
+    }
 	void Update ()
     {
         //Debug.Log(Time.time);
@@ -24,7 +31,7 @@ public class CoinScript : MonoBehaviour
             cash = PlayerPrefs.GetInt("Money");
             cash++;
             PlayerPrefs.SetInt("Money", cash);
-            money.text = "Money: " + cash;
+            money.text = ": " + cash;
             Destroy(gameObject);
         }
     }
