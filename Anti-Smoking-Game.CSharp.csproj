@@ -79,6 +79,9 @@
     <Compile Include="Assets\_Scripts\DialogueScripts\d1s4a.cs" />
     <Compile Include="Assets\_Scripts\DialogueScripts\d1s4b.cs" />
     <Compile Include="Assets\_Scripts\DialogueScripts\d1s5.cs" />
+    <Compile Include="Assets\_Scripts\DialogueScripts\d1s6.cs" />
+    <Compile Include="Assets\_Scripts\DialogueScripts\d1s7.cs" />
+    <Compile Include="Assets\_Scripts\DialogueScripts\d1s8.cs" />
     <Compile Include="Assets\_Scripts\DoorScript.cs" />
     <Compile Include="Assets\_Scripts\FadeInOut.cs" />
     <Compile Include="Assets\_Scripts\JumpScript.cs" />

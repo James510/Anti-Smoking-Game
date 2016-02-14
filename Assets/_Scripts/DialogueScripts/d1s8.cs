@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class d1s3 : MonoBehaviour
+public class d1s8 : MonoBehaviour
 {
     public Text textfield;
     public GameObject background;
@@ -51,7 +51,7 @@ public class d1s3 : MonoBehaviour
     void Start()
     {
         //First dialogue display
-        currenttext = "You: One coffee please, just the usual."; //String type
+        currenttext = "You make it to the rooftop and stand still for a moment"; //String type
         dialoguecall(currenttext);
     }
 
@@ -67,137 +67,137 @@ public class d1s3 : MonoBehaviour
                 dialoguecounter++;
                 switch (dialoguecounter)
                 {
-                    case 2://Second dialogue to display
-                        currenttext = "Cashier: Coming right up.";
+                    case 2:
+                        currenttext = "You pull out your pack of cigarettes.";
                         dialoguecall(currenttext);
                         break;
                     case 3:
-                        currenttext = "It's become some sort of daily ritual where I get a coffee from here everyday. The owner, Michael, has become a good friend of mine.";
+                        currenttext = "What will you do?";
                         dialoguecall(currenttext);
                         break;
                     case 4:
-                        currenttext = "Cashier: Here you go. Have a nice day!";
+                        string[] choices = new string[2];
+                        choices[0] = "Light up.";
+                        choices[1] = "Quit.";
+                        UIController.SendMessage("Decision", choices);
+                        isrunning = true;
+                        canGo = false;
+                        break;
+                    case 5://Path 1
+                        currenttext = "You light a cigarette and inhale deeply.";
                         dialoguecall(currenttext);
                         break;
-                    case 5:
-                        background.SendMessage("ChangeBackground", 1);
-                        isrunning = true;
-                        StartCoroutine("SceneChangeWait", 2.0f);
-                        break;
                     case 6:
-                        currenttext = "Smoker: Hey can I borrow a lighter Sid?";
+                        currenttext = "You: Sigh";
                         dialoguecall(currenttext);
                         break;
                     case 7:
-                        currenttext = "You: Hey, what are you doing?";
+                        currenttext = "The door opens behind you.";
                         dialoguecall(currenttext);
                         break;
                     case 8:
-                        currenttext = "Smoker: We are having a cigarette or two. Would you like to join us?";
+                        currenttext = "Clarice: What are you doing up here, Doc?";
                         dialoguecall(currenttext);
                         break;
                     case 9:
-                        currenttext = "(What will you do?)";
+                        currenttext = "You: . . .";
                         dialoguecall(currenttext);
                         break;
                     case 10:
-                        string[] choices = new string[2];
-                        choices[0] = "Take one out and light up";
-                        choices[1] = "Ask them politely to not smoke so close to others";
-                        UIController.SendMessage("Decision", choices);
-                        isrunning = true;
-                        canGo = false;
+                        currenttext = "You: I’m, uh, I’m smoking Clarice.";
+                        dialoguecall(currenttext);
                         break;
-                    case 11: //Path 1
-                        currenttext = "You: Sure. Thanks, can I borrow a lighter too?";
+                    case 11:
+                        currenttext = "Clarice: I see. Well, it is your choice, your life. I figured though, you out of everyone would understand.";
                         dialoguecall(currenttext);
                         break;
                     case 12:
-                        currenttext = "Smoker: Yeah, here. So what are you doing?";
+                        currenttext = "Clarice: Seeing what you see.";
                         dialoguecall(currenttext);
                         break;
                     case 13:
-                        currenttext = "You: On my way to work.";
+                        currenttext = "Clarice: I just hope you get to run your marathon, and ski your mountain.";
                         dialoguecall(currenttext);
                         break;
                     case 14:
-                        currenttext = "Smoker: Ah, that sounds boring.";
+                        currenttext = "You: . . . ";
                         dialoguecall(currenttext);
                         break;
                     case 15:
-                        currenttext = "You: Can be, but is necessary. Anyway, thanks.";
-                        dialoguecounter = 28;
+                        currenttext = "Clarice: Well, see you tomorrow, Doc.";
                         dialoguecall(currenttext);
                         break;
-                    case 16://Path 2
-                        currenttext = "You: No thank you, but I was wondering if you could maybe not smoke so close to the sidewalk and other people?";
+                    case 16:
+                        currenttext = "She sighs and closes the door behind her.";
                         dialoguecall(currenttext);
                         break;
-                    case 17:
-                        currenttext = "Smoker: Well actually, this is a free country and we can smoke where we want to, so why don’t you move away from us?";
+                    case 17://path 2
+                        currenttext = "You: I have just made up my mind, Clarice. I am going to quit.";
                         dialoguecall(currenttext);
                         break;
                     case 18:
-                        choices = new string[2];
-                        choices[0] = "I wasn’t trying to be rude. I was just asking for you to be polite";
-                        choices[1] = "Excuse you!";
-                        UIController.SendMessage("Decision", choices);
-                        isrunning = true;
-                        canGo = false;
-                        break;
-                    case 19://Path 1
-                        currenttext = "You: I wasn’t trying to be rude. I was just asking for you to be polite";
-                        dialoguecounter = 28;
+                        currenttext = "Clarice: Glad to hear it, Doc. You gunna get to run your marathon?";
                         dialoguecall(currenttext);
                         break;
-                    case 20://Path2
-                        currenttext = "You: Excuse you!";
+                    case 19:
+                        currenttext = "You: Yeah, I am going to get to run my marathon.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 20:
+                        currenttext = "Clarice: Well, that’s good. I will leave you to the training then. It isn’t easy, but you can push through, I know you can.";
                         dialoguecall(currenttext);
                         break;
                     case 21:
-                        currenttext = "You: Everyone else has a right to not be around your smoke.";
+                        currenttext = "You: Thanks Clarice. I will see you tomorrow, okay?";
                         dialoguecall(currenttext);
                         break;
                     case 22:
-                        currenttext = "Smokers: Well, we don’t really care about that.";
+                        currenttext = "Clarice: Yep. See you then Doc.";
                         dialoguecall(currenttext);
                         break;
                     case 23:
+                        currenttext = "She smiles and closes the door behind her.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 24:
+                        currenttext = "You gather your things and head home";
+                        dialoguecall(currenttext);
+                        break;
+                    case 25:
+                        background.SendMessage("ChangeBackground", 1);
+                        isrunning = true;
+                        StartCoroutine("SceneChangeNext", 2.0f);
+                        break;
+                    case 26:
+                        currenttext = "You pass a bar with two smokers outside.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 27:
+                        currenttext = "It's the same two from earlier today.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 28:
+                        currenttext = "Smoker: Hey, you, do you wanna have a smoke with us?";
+                        dialoguecall(currenttext);
+                        break;
+                    case 29:
                         choices = new string[2];
-                        choices[0] = "Why don’t I explain to you the risks of secondhand smoke?";
-                        choices[1] = "You really need to move";
+                        choices[0] = "Sure thing.";
+                        choices[1] = "No thanks.";
                         UIController.SendMessage("Decision", choices);
                         isrunning = true;
                         canGo = false;
                         break;
-                    case 24://Path1
-                        currenttext = "You: Why don’t I explain to you the risks of secondhand smoke?";
+                    case 30://path 1
+                        currenttext = "Yeah, thanks for offering. I am all out actually.";
                         dialoguecall(currenttext);
                         break;
-                    case 25:
-                        currenttext = "You: You see, when you are smoking in public like this, not only is it unpleasant for other people, it can also trigger asthma attacks or cause asthma in children and infants. And there is a chance that it can cause cancer in others as well. Why don’t you come to my clinic and I can tell you more?";
-                        dialoguecall(currenttext);
-                        break;
-                    case 26:
-                        currenttext = "They agree to follow you to your clinic.";
-                        dialoguecounter = 28;
-                        flag1 = true;
-                        dialoguecall(currenttext);
-                        break;
-                    case 27://Path2
-                        currenttext = "You: You really need to move.";
-                        dialoguecall(currenttext);
-                        break;
-                    case 28:
-                        currenttext = "You: Don’t subject other people to your smoke.";
-                        dialoguecall(currenttext);
-                        break;
-                    case 29://End
-                        currenttext = "You head to work.";
+                    case 31://Path 2
+                        currenttext = "Nah, thanks for the offer though. I have a marathon to train for. You guys should do the same.";
                         dialoguecall(currenttext);
                         break;
                     default:
-                        background.SendMessage("ChangeBackground", 1);
+                        background.SendMessage("ChangeBackground", 2);
                         isrunning = true;
                         StartCoroutine("SceneChangeNext", 2.0f);
                         break;
@@ -220,22 +220,17 @@ public class d1s3 : MonoBehaviour
     IEnumerator SceneChangeNext(float f)
     {
         yield return new WaitForSeconds(f);
-        if(flag1)
-            UIController.SendMessage("NextScene",nextScene);
-        else
-            UIController.SendMessage("NextScene", nextScene+1);
+        UIController.SendMessage("NextScene", nextScene);
     }
     void ButtonOne()
     {
         canGo = true;
         UIController.SendMessage("Decided");
-        if(tree==1)
-            dialoguecounter = 10;
-        if (tree == 2)
-            dialoguecounter = 18;
-        if (tree == 3)
-            dialoguecounter = 23;
         currenttext = "...";
+        if (tree == 1)
+            dialoguecounter = 4;
+        else if (tree == 2)
+            dialoguecounter = 16;
         tree++;
         dialoguecall(currenttext);
     }
@@ -243,13 +238,11 @@ public class d1s3 : MonoBehaviour
     {
         canGo = true;
         UIController.SendMessage("Decided");
-        if (tree == 1)
-            dialoguecounter = 15;
-        if (tree == 2)
-            dialoguecounter = 19;
-        if (tree == 3)
-            dialoguecounter = 26;
         currenttext = "...";
+        if (tree == 1)
+            dialoguecounter = 29;
+        else if (tree == 2)
+            dialoguecounter = 30;
         tree++;
         dialoguecall(currenttext);
     }

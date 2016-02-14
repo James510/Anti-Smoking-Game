@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class d1s4b : MonoBehaviour
+public class d1s6 : MonoBehaviour
 {
     public Text textfield;
     public GameObject background;
@@ -51,7 +51,7 @@ public class d1s4b : MonoBehaviour
     void Start()
     {
         //First dialogue display
-        currenttext = "Nurse: You have your first patient ready for you soon."; //String type
+        currenttext = "What should you eat for lunch?"; //String type
         dialoguecall(currenttext);
     }
 
@@ -67,25 +67,62 @@ public class d1s4b : MonoBehaviour
                 dialoguecounter++;
                 switch (dialoguecounter)
                 {
-                    case 2://Second dialogue to display
-                        currenttext = "You: Right, I see Clarice today right?";
-                        dialoguecall(currenttext);
+                    case 2:
+                        string[] choices = new string[2];
+                        choices[0] = "Hot Dog";
+                        choices[1] = "Pizza";
+                        UIController.SendMessage("Decision", choices);
+                        isrunning = true;
+                        canGo = false;
                         break;
-                    case 3:
-                        currenttext = "Nurse: Yes, she is first. Then after that you have a new patient. And then are scheduled to handle walk-ins.";
+                    case 3://Path 1
+                        currenttext = "You: One hot dog please.";
                         dialoguecall(currenttext);
                         break;
                     case 4:
-                        currenttext = "You: Right. Well, I won’t leave Clarice waiting any longer. Thank you.";
+                        currenttext = "The vendor hands you a hot dog.";
                         dialoguecall(currenttext);
+                        dialoguecounter = 6;
                         break;
-                    case 5:
-                        currenttext = "You walk to the patient's room";
+                    case 5://path2
+                        currenttext = "You: One pizza please.";
                         dialoguecall(currenttext);
                         break;
                     case 6:
-                    default:
+                        currenttext = "The vendor hands you a pizza.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 7:
+                        currenttext = "You: Thanks. Have a nice day.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 8:
+                        currenttext = "After eating, you get the urge to smoke";
+                        dialoguecall(currenttext);
+                        break;
+                    case 9:
                         background.SendMessage("ChangeBackground", 1);
+                        isrunning = true;
+                        StartCoroutine("SceneChangeWait", 2.0f);
+                        break;
+                    case 10:
+                        currenttext = "Making your way to an alley, you pull out a pack of cigarettes.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 11:
+                        currenttext = "You feel guilty about it, but you also feel less stressed out.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 12:
+                        currenttext = "You: I hope no one from work sees me.";
+                        dialoguecall(currenttext);
+                        break;
+                    case 13:
+                        currenttext = "You walk briskly back to work.";
+                        dialoguecall(currenttext);
+                        break;
+                    default:
+                        background.SendMessage("ChangeBackground", 2);
                         isrunning = true;
                         StartCoroutine("SceneChangeNext", 2.0f);
                         break;
@@ -115,6 +152,7 @@ public class d1s4b : MonoBehaviour
         canGo = true;
         UIController.SendMessage("Decided");
         currenttext = "...";
+        dialoguecounter = 2;
         tree++;
         dialoguecall(currenttext);
     }
@@ -123,6 +161,7 @@ public class d1s4b : MonoBehaviour
         canGo = true;
         UIController.SendMessage("Decided");
         currenttext = "...";
+        dialoguecounter = 4;
         tree++;
         dialoguecall(currenttext);
     }
