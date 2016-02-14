@@ -7,10 +7,6 @@ public class CoinScript : MonoBehaviour
     //public float timer=0.1f;
     public Text money;
     private int cash=0;
-    void Start()
-    {
-
-    }
 	void Update ()
     {
         //Debug.Log(Time.time);
