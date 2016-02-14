@@ -11,26 +11,25 @@ public class UIController : MonoBehaviour
     {
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
-        stressCount = 75;
-        healthCount = 100;
-        //moneyCount = 100;
-	}
+
+        stress.text = "Stress: " + PlayerPrefs.GetInt("Stress");
+        money.text = ": " + PlayerPrefs.GetInt("Money");
+        health.text = ": " + PlayerPrefs.GetInt("Health");
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        stress.text = "Stress: " + stressCount;
-        health.text = "Health: " + healthCount;
-        //money.text = "Money: " + moneyCount;
 
-        if (stressCount < 0)
-            stressCount = 0;
-        if (stressCount > 100)
-            stressCount = 100;
-        if (healthCount < 0)
-            healthCount = 0;
-        if (healthCount > 100)
-            healthCount = 100;
+
+        if (PlayerPrefs.GetInt("Stress") < 0)
+            PlayerPrefs.SetInt("Stress", 0);
+        if (PlayerPrefs.GetInt("Stress") > 100)
+        {
+            PlayerPrefs.SetInt("Stress", 0);
+            PlayerPrefs.SetInt("Health", PlayerPrefs.GetInt("Health") - 20);
+        }
     }
 
     void StressInc(int n)
