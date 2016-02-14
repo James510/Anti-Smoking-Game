@@ -7,6 +7,7 @@ public class d1s4a : MonoBehaviour
     public Text textfield;
     public GameObject background;
     public GameObject UIController;
+    public int nextScene;
     string currenttext = "";
     bool canGo = true;
     bool isrunning = false;
@@ -107,7 +108,7 @@ public class d1s4a : MonoBehaviour
     IEnumerator SceneChangeNext(float f)
     {
         yield return new WaitForSeconds(f);
-        UIController.SendMessage("NextScene", 8);
+        UIController.SendMessage("NextScene", nextScene);
     }
     void ButtonOne()
     {
